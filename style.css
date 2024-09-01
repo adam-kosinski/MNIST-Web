@@ -18,6 +18,15 @@ main {
   inset: 0;
 }
 
+p {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#instructions {
+  font-size: 20px;
+}
+
 #canvas-and-output {
   display: flex;
   gap: 20px;
@@ -32,15 +41,6 @@ main {
   border: 1px solid black;
   touch-action: none;
   flex-shrink: 0;
-}
-
-p {
-  margin: 0;
-  font-family: sans-serif;
-}
-
-#instructions {
-  font-size: 20px;
 }
 
 #clear {
