@@ -1,13 +1,4 @@
-html,
 body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: lightblue;
 }
 
@@ -16,23 +7,31 @@ main {
   padding: 50px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
+  width: 600px;
+  max-width: 95dvw;
+  height: min-content;
+  max-height: 95dvh;
+  box-sizing: border-box;
+
+  position: absolute;
+  margin: auto;
+  inset: 0;
 }
 
 #canvas-and-output {
   display: flex;
   gap: 20px;
-}
-
-@media (max-width: 500px) {
-  #canvas-and-output {
-    flex-direction: column;
-  }
+  width: 100%;
 }
 
 #draw-canvas {
   width: 300px;
-  height: 300px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   border: 1px solid black;
+  touch-action: pan-x pan-y;
+  flex-shrink: 0;
 }
 
 p {
@@ -41,17 +40,18 @@ p {
 }
 
 #instructions {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 #clear {
-  font-size: 24px;
+  font-size: 16px;
   cursor: pointer;
 }
 
 #output {
   display: grid;
-  grid-template-columns: 20px 200px;
+  width: min(100%, 300px);
+  grid-template-columns: 20px 1fr;
   row-gap: 5px;
   align-items: center;
 }
@@ -61,4 +61,19 @@ p {
   height: 100%;
   background-color: cornflowerblue;
   border-right: 1px solid cornflowerblue;
+}
+
+@media (max-width: 550px) {
+  #canvas-and-output {
+    flex-direction: column;
+  }
+  #output p {
+    font-size: 12px;
+  }
+  #draw-canvas {
+    width: 250px;
+  }
+  main {
+    padding: 30px;
+  }
 }

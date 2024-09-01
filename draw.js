@@ -5,7 +5,7 @@ const scaleY =
   canvas.height / Number(getComputedStyle(canvas).height.split("px")[0]);
 
 const ctx = canvas.getContext("2d", { willReadFrequently: true });
-ctx.lineWidth = 2;
+ctx.lineWidth = 1.5;
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
 
@@ -14,17 +14,18 @@ let prevX;
 let prevY;
 let mouseIsDown = false;
 
-canvas.addEventListener("mousedown", (e) => {
+canvas.addEventListener("pointerdown", (e) => {
   prevX = e.offsetX;
   prevY = e.offsetY;
   mouseIsDown = true;
 });
 
-document.addEventListener("mouseup", () => {
+document.addEventListener("pointerup", () => {
   mouseIsDown = false;
 });
 
-canvas.addEventListener("mousemove", (e) => {
+canvas.addEventListener("pointermove", (e) => {
+  e.preventDefault();
   if (!mouseIsDown) return;
 
   if (prevX !== undefined && prevY !== undefined) {
