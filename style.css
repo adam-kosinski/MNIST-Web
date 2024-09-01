@@ -30,7 +30,7 @@ main {
   height: auto;
   aspect-ratio: 1 / 1;
   border: 1px solid black;
-  touch-action: pan-x pan-y;
+  touch-action: none;
   flex-shrink: 0;
 }
 
@@ -50,7 +50,7 @@ p {
 
 #output {
   display: grid;
-  width: min(100%, 300px);
+  width: 100%;
   grid-template-columns: 20px 1fr;
   row-gap: 5px;
   align-items: center;
