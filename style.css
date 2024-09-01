@@ -1,0 +1,15 @@
+#draw-canvas {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+p {
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+#clear {
+  font-size: 24px;
+  cursor: pointer;
+}
